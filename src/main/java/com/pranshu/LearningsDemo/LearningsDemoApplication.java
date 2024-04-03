@@ -7,10 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class LearningsDemoApplication implements CommandLineRunner {
+
 	private InitService initService;
+
 	public LearningsDemoApplication(InitService initService) {
 		this.initService = initService;
 	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(LearningsDemoApplication.class, args);
 	}

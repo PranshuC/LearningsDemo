@@ -1,15 +1,15 @@
 package com.pranshu.LearningsDemo.service;
 
-import com.pranshu.LearningsDemo.demo.Author;
-import com.pranshu.LearningsDemo.demo.AuthorRepo;
-import com.pranshu.LearningsDemo.demo.Book;
-import jakarta.transaction.Transactional;
+import com.pranshu.LearningsDemo.cascadeFetch.Author;
+import com.pranshu.LearningsDemo.cascadeFetch.AuthorRepo;
+import com.pranshu.LearningsDemo.cascadeFetch.Book;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class InitServiceImpl implements InitService {
+
     private AuthorRepo authorRepo;
 
     public InitServiceImpl(AuthorRepo authorRepo) {
@@ -40,7 +40,7 @@ public class InitServiceImpl implements InitService {
         // FetchType.LAZY -> Fetches only the author (no JOINs), not bring dependent books
 
         List<Book> books = savedAuthor.getBooks();
-        System.out.println(books);
+        //System.out.println(books);
         /** FetchType.LAZY -> LazyInitializationException : failed to lazily initialize a collection of role
          * Books are not fetched. But, if needed, further query :
          * List<Book> books = bookRepository.findByAuthor_Id(savedAuthor.getId());
@@ -49,6 +49,7 @@ public class InitServiceImpl implements InitService {
 
     }
 }
+
 /**
 * FetchMode.SELECT + FetchType.EAGER-> 2 separate queries are fired (1 for author, 1 for books)
 * FetchMode.SELECT + FetchType.LAZY-> Anyways only 1 query, for author

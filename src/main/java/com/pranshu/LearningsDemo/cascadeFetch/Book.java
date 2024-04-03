@@ -1,4 +1,4 @@
-package com.pranshu.LearningsDemo.demo;
+package com.pranshu.LearningsDemo.cascadeFetch;
 
 import jakarta.persistence.*;
 import lombok.Getter;

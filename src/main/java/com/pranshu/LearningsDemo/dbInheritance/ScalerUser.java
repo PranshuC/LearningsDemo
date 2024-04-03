@@ -1,4 +1,4 @@
-package com.pranshu.LearningsDemo.singleTable;
+package com.pranshu.LearningsDemo.dbInheritance;
 
 import jakarta.persistence.*;
 import lombok.Getter;

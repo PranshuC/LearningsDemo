@@ -1,4 +1,4 @@
-package com.pranshu.LearningsDemo.demo;
+package com.pranshu.LearningsDemo.cascadeFetch;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
